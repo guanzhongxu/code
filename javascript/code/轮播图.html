@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+	</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul {
+			list-style: none;
+			/*width: 2550px;*/
+			position: absolute;
+			left: 0px;
+		}
+		#outer{
+			width: 520px;
+			height: 333px;
+			margin: 0 auto;
+			background-color: greenyellow;
+			padding: 20px 0;
+			overflow: hidden;
+			position: relative;
+		}
+		img {
+			width: 500px;
+			height: 333px;
+		}
+		#imglist li {
+			float: left;
+			margin-left: 10px;
+		}
+		#nav {
+			position: absolute;
+			bottom:20px;
+			left: 0px;
+
+		}
+		#nav a {
+			float: left;
+			width: 20px;
+			height: 20px;
+			background-color: rgba(255,255,255,0.5);
+			margin: 0 5px;
+			/*opacity: 0.5;*/
+			/*兼容ie8*/
+			/*filter: alpha(opacity=50);*/
+		}
+		#nav a:hover{
+			background-color: rgba(0,0,255,0.5);
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var imglist = document.getElementById("imglist");
+			var imgArr =document.getElementsByTagName('img');
+			imglist.style.width = 510*imgArr.length+"px";
+			var nav = document.getElementById("nav");
+			var outer = document.getElementById("outer");
+			nav.style.left= (outer.offsetWidth - nav.offsetWidth)/2 +"px"; 
+			var a = document.getElementsByTagName("a");
+			var index = 0;
+			//a[index].style.backgroundColor = "pink";
+			//点击超链接切换到指定图片
+			//为所有的超链接绑定单机响应函数
+			for(var i =0 ;i<a.length; i++){
+				a[i].num=i;
+				a[i].onclick = function(){
+					//切换图片
+					index= this.num;
+					imglist.style.left= -510*index+"px";
+
+				}
+			}
+			//闯进一个方法用来设置选中的a
+			function setA(){
+				for(var i =0 ;i<a.length; i++){
+					a[i].style.backgroundColor = "";
+				}
+				a[index].style.backgroundColor="pink";
+			}
+		}
+	</script>
+</head>
+<body>
+<!-- 外部div -->
+<div id ="outer">
+	<ul id="imglist">
+		<li><img src="../images/1.jpg"></li>
+		<li><img src="../images/2.jpg"></li>
+		<li><img src="../images/3.jpg"></li>
+		<li><img src="../images/4.jpg"></li>
+		<li><img src="../images/5.jpg"></li>
+		<li><img src="../images/6.jpg"></li>
+	</ul>
+	<!-- 导航摁钮 -->
+	<div id ="nav">
+		<a href="javascript:;"></a>
+		<a href="javascript:;"></a>
+		<a href="javascript:;"></a>
+		<a href="javascript:;"></a>
+		<a href="javascript:;"></a>
+
+	</div>
+</div>
+</body>
+</html>

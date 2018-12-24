@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#box1 {
+			width: 100px;
+			height: 100px;
+			background-color: yellow;
+		}
+		#s1 {
+			background-color: green;
+		}
+		body {
+			background-color: #3c3c3c;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var s1 = document.getElementById("s1");
+			s1.onclick = function(event){
+				event = event || window.event;
+				alert("span");
+				event.cancelBubble= true;
+			};
+			var box1 = document.getElementById("box1");
+			box1.onclick = function(event){
+				event =event ||window.event;
+				alert("box1");
+				event.cancelBubble=true;
+			};
+			
+			document.body.onclick = function(event){
+				event = event ||window.event;
+				alert("body");
+				event.cancelBubble = true;
+			};
+		}
+	</script>
+</head>
+<body>
+<div id = "box1">
+	我是box1
+	<span id ="s1">我是span</span>
+</div>
+</body>
+</html>

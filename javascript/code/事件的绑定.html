@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var btn = document.getElementById("btn");
+			/*btn.onclick = function(){
+				alert("55");
+			};*/
+
+			bind(btn, "click",function(){
+				alert("444");
+			});
+			bind(btn, "click",function(){
+				alert("555");
+			});
+			function bind(obj,eventStr,callBack){
+				//照顾大多数浏览器
+				//obj.addEventListener(eventStr,callBack);
+
+
+				//IE8浏览器
+				//obj.attachEvent("on"+eventStr,callBack);
+
+				//进行判断
+				if(obj.addEventListener){
+					obj.addEventListener(eventStr,callBack,false);
+				}else{
+					obj.attachEvent("on"+eventStr,function(){
+						callBack.call(obj);
+					});
+				}
+
+
+				
+			}
+			/*btn.addEventListener("click",function(){
+				alert("1");
+			},false);
+
+			btn.addEventListener("click",function(){
+				alert("2");
+			},false);
+
+			btn.addEventListener("click",function(){
+				alert("3");
+			},false);*/
+		}
+	</script>
+</head>
+<body>
+	<button id ="btn"> 555</button>
+</body>
+</html>

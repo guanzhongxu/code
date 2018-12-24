@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		window.onload =function(){
+			var items = document.getElementsByName("items");
+			/*
+			全选摁钮 
+				点击摁钮之后4个多选狂犬都被选中
+			*/
+			var checkedAllBtn =document.getElementById("checkedAllBtn");
+			checkedAllBtn.onclick =function(){
+				//设置4个多选框变为选中状态
+				
+				//遍历数组
+				for(var i=0;i<items.length;i++){
+					items[i].checked = true;
+				}
+				checkedAllBox.checked = true;
+			};
+
+			/*全不选摁钮*/
+			var checkedNoBtn = document.getElementById("checkedNoBtn");
+			checkedNoBtn.onclick = function(){
+				
+				//遍历数组
+				for(var i=0; i<items.length; i++){
+					
+					items[i].checked = false;
+				}
+				checkedAllBox.checked = false;
+			};
+
+			/*反选*/
+			//获取对象
+			var checkedRevBtn = document.getElementById("checkedRevBtn");
+			//得到要操作的数组
+			checkedRevBtn.onclick = function(){
+			//判断要操作的数组状态并取反
+				for(var i =0; i<items.length; i++){
+					/*if(items[i].checked){
+						items[i].checked = false;
+					}else{
+						items[i].checked = true;
+					}*/
+						items[i].checked = !items[i].checked;
+						
+						if(items[i].checked){
+							var yes=0;	
+						for(var j =0; j<items.length ;j++){
+							if(items[j].checked){
+								yes++;
+							}else{
+								checkedAllBox.checked = false;
+								break;
+							}
+							if(yes==items.length){
+								checkedAllBox.checked = true;
+							}
+
+						}
+						}
+					};
+				};
+
+				/*点击摁钮后弹出属性值*/
+				//绑定单机相应函数
+				var sendBtn=document.getElementById("sendBtn");
+				sendBtn.onclick=function(){
+					for(var i= 0; i<items.length; i++){
+						if(items[i].checked){
+							alert(items[i].value);
+						}			
+					};
+					/*当他选中其他都选中*/		
+				};
+				var checkedAllBox = document.getElementById("checkedAllBox");
+						checkedAllBox.onclick =function(){
+							for(var i=0; i<items.length; i++){
+								items[i].checked =this.checked;
+							}	
+						};
+			
+			//6
+			
+			for(var i=0; i<items.length ;i++){
+					items[i].onclick = function(){
+						var yes=0;	
+						for(var j =0; j<items.length ;j++){
+							if(items[j].checked){
+								yes++;
+							}else{
+								checkedAllBox.checked = false;
+								break;
+							}
+							if(yes==items.length){
+								checkedAllBox.checked = true;
+							}
+
+						}
+
+					}
+				}
+				
+
+		//1 #checkedAllBtn
+		//2 #checkedNoBtn
+		//3 #checkedRevBtn
+		//4 #sendBtn
+		//5 #checkedAllbox
+		//6 #items
+			
+		}
+	</script>
+</head>
+<body>
+<form action="" method="post">
+		爱好：
+<input type="checkbox" id="checkedAllBox">全选/不选 <br>
+<input type="checkbox" value="足球" name="items">足球
+<input type="checkbox" value="篮球" name="items">篮球
+<input type="checkbox" value="乒乓球" name="items">乒乓球
+<input type="checkbox" value="羽毛球" name="items">羽毛球 <br>
+<input type="button" id="checkedAllBtn" value="全选">
+<input type="button" id="checkedNoBtn" value="全不选">
+<input type="button" id="checkedRevBtn" value="反选">
+<input type="button" id="sendBtn" value="提交">
+</form>
+</body>
+</html>

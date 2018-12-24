@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		
+		//console.log(str[6]);
+		/*字符转在底层是字符数组*/
+		//length 可以以获得字符转的属性 不用加（）
+		/*charAt()方法 返回指定位置字符*/
+		/*console.log(str.charAt(3));*///根据所因获取制定的字符
+
+		/*charCodeAt()方法  获取制定诶之子负的编码 返回的是Unicode编码*/
+		/*var result =str.charCodeAt(1);
+		console.log(result);*/
+
+		/*fromCharCode()方法 根据字符编码获得字符 所以直接用的是类去调 String*/
+		/*result =String.fromCharCode(0x2692);
+		console.log(result);*/
+
+		/*concat() 作用和+一样 连接字符串 和数组一样*/
+		/*result = str.concat("你好吗");
+		console.log(result);
+		var str1 ="管忠旭";
+		result = str.concat(str1,"你好吗");
+		console.log(result);*/
+
+		/*indexof() 可以指定开始的位置 搜索是否存在某个字符串 如果有就返回索引号 没有则是-1*/
+		var str ="Hello Atguihu";
+		/*var result=str.indexOf("l",3);
+		console.log(result);*/
+		/*和上一个的用法一样 有lastIndexOf()  从后往前找*/
+		/*result = str.lastIndexOf("h",2);*/
+
+		/*slice 截取制定的字符串 1 开始位置 2 结束位置 -负数表示从后面往前 包括开始不包括结束*/
+		/*result = str.slice(2,-5);
+		console.log(result);*/
+
+		/*substring() 和slice 一样 截取作用 但是不能接受负数 如果你一定传 那么相当于0 二球会自动调整参数的位置 前小后大*/
+		result =str.substring(2, 6);
+		console.log(result);
+
+		/*substr 和 substring一样 也是截取字符串的前开始后长度但是不支持使用*/
+		result =str.substr(2, 5);
+		console.log(result);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

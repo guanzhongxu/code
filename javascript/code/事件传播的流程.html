@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#box {
+			width: 300px;
+			height: 300px;
+			background-color: red;
+
+		}
+		#box1 {
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+		}
+		#box2 {
+			width: 150px;
+			height: 150px;
+			background-color: green;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var box = document.getElementById("box");
+			var box1 = document.getElementById("box1");
+			var box2 = document.getElementById("box2");
+			bind(box, "click",function(){
+				alert("box");
+			})
+			bind(box1, "click",function(){
+				alert("box1");
+			})
+			bind(box2, "click",function(){
+				alert("box2");
+			})
+				function bind(obj,eventStr,callBack){
+				//照顾大多数浏览器
+				//obj.addEventListener(eventStr,callBack);
+				//IE8浏览器
+				//obj.attachEvent("on"+eventStr,callBack);
+				//进行判断
+				if(obj.addEventListener){
+					obj.addEventListener(eventStr,callBack，false);//主要是true
+				}else{
+					obj.attachEvent("on"+eventStr,function(){
+						callBack.call(obj);
+					});
+				}	
+			}
+		}
+	</script>
+</head>
+<body>
+<div id ="box">
+	<div id = "box1">
+		<div id ="box2"></div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#box {
+			width: 300px;
+			height: 300px;
+			background-color: pink;
+			position: absolute;
+			left: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var box = document.getElementById("box");
+			var btn = document.getElementById("btn");
+			var timer;
+			btn.onclick = function(event){
+				event = event || window.event;
+				clearInterval(timer);
+				var speed = 10;
+				timer=setInterval(function(){
+					//box.style.left = parseInt(box.offsetLeft)+speed;
+					var oldvalue = parseInt(box.offsetLeft);
+					var newvalue = oldvalue+1;
+					
+					if(newvalue>800){
+						newvalue = 800;
+						clearInterval(timer);	
+					}
+					
+					box.style.left = newvalue+"px";
+				},30);
+			};
+		};
+	</script>
+</head>
+<body>
+<button id ="btn">555</button>
+<div id = "box"></div>
+</body>
+</html>

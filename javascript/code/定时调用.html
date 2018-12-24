@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		window.onload = function(){
+			//获取id为count的对象 
+			var count = document.getElementById("count");
+			//是我们count中的内容自动切换
+			/*for(var i=0 ; i<100 ; i++){
+				count.innerHTML=i;
+			}*/
+			/*setInterval(函数，间隔时间（单位是毫秒），)*/
+			var i = 1;
+			var timer = setInterval(function(){
+				count.innerHTML=i++;
+				if(i ==20){
+					clearInterval(timer);
+				}
+				
+			},1000);
+
+		}
+	</script>
+</head>
+<body>
+<h1 id ="count"></h1>
+</body>
+</html>

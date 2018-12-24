@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		/*
+		首先明确RegExp 的流程 
+			1明确目标规则 					转意 长度    
+				- 电子邮件的开头任意字母和数字. \w {3，}	
+				- 中间无所谓
+				- 后半段 @
+				- 网址 只能是字母和数字 [A-z0-9]+ 
+				- .com |  (\.[A-z]{2-5}){1,2}
+				- .cn（*） 长度最低是2位 最高时 5
+		*/
+		var emaiReg = /\w{3,}(\.\w+)*[A-z0-9]+ (\.[A-z]{2-5}){1,2}/;
+		var emai ="abc@abc.com";
+		console.log(emaiReg.test(emai));
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		img {
+			width: 200px;
+			height: 200px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var img1 = document.getElementById("img1");
+			var btn = document.getElementById("btn");
+			var btn1 = document.getElementById("btn1");
+			var arr =["../images/1.jpg","../images/2.jpg","../images/3.jpg","../images/4.jpg","../images/5.jpg","../images/6.jpg"];
+			var index = 0;
+			var timer;
+			btn.onclick = function(){
+				clearInterval(timer);
+				/*开起一个定时器 来切换图片*/
+				timer = setInterval(function(){
+				img1.src=arr[index];
+				++index;
+				if(index>=arr.length){
+					index=0;
+				}
+				/*if(index>arr.length){
+					index=0;
+				}*/	
+			},1000);
+			}
+			//为btn1绑定单击响应函数
+			btn1.onclick  = function(){
+				clearInterval(timer);
+			}
+			
+
+			
+			
+		}
+	</script>
+</head>
+<body>
+<img id ="img1" src="../images/1.jpg"><br><br>
+<button id="btn">1111</button>
+<button id="btn1">关闭</button>
+</body>
+</html>

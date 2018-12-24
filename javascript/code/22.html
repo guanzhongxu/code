@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#box {
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+		}
+		body {
+			height:1000px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			//获取 id为box 的对象
+			var box = document.getElementById("box");
+			//为box的对象绑定手表滚动函数
+			box.onmousewheel = function(event){
+				event = event || window.event;
+				if(event.wheelDelta< 0 ){
+					box.style.height = box.clientHeight + 10 + "px";
+				}else{
+					box.style.height = box.clientHeight - 10 + "px";
+				}
+				return false;
+			}
+		}
+	</script>
+</head>
+<body >
+<div id ="box"></div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		img {
+			width: 300px;
+			height: 300px;
+		}
+	</style>
+	<script type="text/javascript">
+		/*
+		BOM浏览器对象模型
+			通过JS操作浏览器
+				BOM中为我们提供了一组相关对象
+				-- BOM对象
+					Window
+						--window 代表整个浏览器的窗口 也是整个网页的全局对象
+					Navigator
+						--navigator 代表了当前浏览器的信息 通过该对象来时别不同的浏览器
+					Location
+						--location 代表当前浏览器的地址栏
+					History
+						--history 代表浏览器的历史记录\
+									由于隐私的原因不能获取过去到具体的历史记录
+									只能操作浏览器向前和向后走 ！当次有效
+					Screen
+						--screen 代表用户屏幕信息 通过该对象可以获取到显示器的东西
+		*/
+		/*
+		navigator
+			获取浏览器信息
+				由于历史原因 navigator  大部分属性都已经不能帮助我们识别浏览器了
+				一般我们只会使用userAgent 来判断浏览器信息
+		*/
+		//alert(navigator.userAgent);
+		window.onload = function(){
+			//获得图片的对象
+			var img = document.getElementById("img1");
+			//获取开始摁钮对象
+			var btn = document.getElementById("btn");
+			//定时器id
+			var timer;
+			//绑定单击响应函数
+			btn.onclick = function(){
+				
+				//创建图片的存储路径
+			var imgAddress = ["../images/1.jpg","../images/2.jpg","../images/3.jpg","../images/4.jpg","../images/5.jpg","../images/6.jpg"];
+			//创建数组的默认值
+			var index = 0;
+			//重新摁下开是时会先关闭上次的定时器
+			clearInterval(timer);
+			//为图片绑定定时器
+			var timer= setInterval(function(event){
+				evetn = event || window.event;
+				index++;
+				if(index>=imgAddress.length){
+					index=0;
+				}
+				img.src= imgAddress[index];
+
+			},1000);
+			var btn1 = document.getElementById("btn1");
+			btn1.onclick =function(event){
+				event = event ||window.event;
+				clearInterval(timer);
+			}
+		};
+			
+	}
+	</script>
+</head>
+<body>
+<img id = "img1" src="../images/1.jpg">
+<button id = "btn">开始</button>
+<button id = "btn1">关闭</button>
+</body>
+</html>

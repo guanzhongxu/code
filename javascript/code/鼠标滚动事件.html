@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#box {
+			width: 300px;
+			height: 300px;
+			background-color: pink;	
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var box = document.getElementById("box");
+			box.onmousewheel = function(event){
+				//判断鼠标滚动的方向
+				event= event ||window.event;
+				//alert(event.wheelDelta);
+				if(event.wheelDelta>0){
+					box.style.height = box.clientHeight -5+"px";
+				}else{
+					box.style.height = box.clientHeight  +5+"px";
+				}
+			};
+
+		}
+		function bind(obj,eventStr,callBack){
+				//照顾大多数浏览器
+				//obj.addEventListener(eventStr,callBack);
+
+
+				//IE8浏览器
+				//obj.attachEvent("on"+eventStr,callBack);
+
+				//进行判断
+				if(obj.addEventListener){
+					obj.addEventListener(eventStr,callBack,false);
+				}else{
+					obj.attachEvent("on"+eventStr,function(){
+						callBack.call(obj);
+					});
+				}
+
+
+				
+			}
+	</script>
+</head>
+<body>
+<div id ="box"></div>
+</body>
+</html>

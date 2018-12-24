@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#box1 {
+			width: 100px;
+			height: 100px;
+			background-color: red;
+			position: absolute;
+		}
+		body {
+			height: 100000000000px;
+			width: 100000000px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			/*使div跟随鼠标移动*/
+			var box1 =document.getElementById("box1");
+
+			document.onmousemove = function(event){
+					//解决兼容问题
+					if(!event){
+						event=window.event;
+					}
+
+					//var x = event.pageX;
+					//var y = event.pageY;
+					//为了兼容IE8 
+					// 火狐等浏览器认为滚动条是HTML的 而chrome认为滚动条是body的 
+					var st =document.body.scrollTop || document.documentElement.scrollTop;
+					var sl = document.body.scrollLeft || document.documentElement.scrollLeft;
+					//以上是处理兼容问题
+					var x =event.clientX;
+					var y = event.clientY;
+					box1.style.left= x+sl+"px";
+					box1.style.top = y+st+"px";
+			}
+		} 
+	</script>
+</head>
+<body>
+<div id ="box1">
+	
+</div>
+</body>
+</html>

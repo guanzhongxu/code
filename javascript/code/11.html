@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#box {
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			position: absolute;
+		}
+		#box1 {
+			width: 300px;
+			height: 300px;
+			background-color: red;
+			position: absolute;
+			left : 200px;
+			top : 200px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var box = document.getElementById("box");
+			box.onmousedown = function(event){
+				event = event || window.event;
+				var ol = event.clientX-box.offsetLeft;
+				var ot = event.clientY-box.offsetTop;
+				document.onmousemove = function(event){
+					event = event || window.event;
+					//获取鼠标位置
+					var left =  event.clientX -ol;
+					var top  =  event.clientY- ot;
+					//把位置告诉目标元素;
+					box.style.left = left +"px";
+					box.style.top = top +"px" ;
+				}
+				document.onmouseup = function(){
+					document.onmousemove = null;
+					document.onmouseup = null;
+				}
+
+			}
+		}
+	</script>
+</head>
+<body>
+<div id = "box">
+	
+</div>
+<div id = "box1"></div>
+</body>
+</html>

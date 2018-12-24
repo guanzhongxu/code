@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		#box {
+			width: 200px;
+			height: 200px;
+			background-color: pink;
+			position: absolute;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var box = document.getElementById("box");
+			var direction = 0;
+			var speed = 10
+			setInterval(function(){
+				switch(direction){
+					case 37 :
+						box.style.left = box.offsetLeft - speed +"px";
+						break;
+					case 38 :
+						box.style.top = box.offsetTop - speed +"px";
+						break;
+					case 39 :
+						box.style.left = box.offsetLeft + speed +"px";
+						break;
+					case 40 :
+						box.style.top = box.offsetTop + speed +"px";
+						break;	
+				}
+			},1)
+			document.onkeydown = function(event){
+				event = event || window.event;
+				if (event.ctrlKey){
+					speed = 5;
+				}else{
+					speed = 1;
+				}
+				direction = event.keyCode;
+			}
+			document.onkeyup = function(event){
+				event = event || window.event;
+				direction = 0;
+			}
+		}
+	</script>
+</head>
+<body>
+<div id= "box"></div>
+</body>
+</html>

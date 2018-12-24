@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		/*
+		使用字面量创建正则表达式
+			语法 var 变量 = /正则表达式/匹配模式
+		*/
+		//var reg = new  RegExp("a","i");//找包含有A的字符串 邮储有返回true 没有返回false 忽略大小写
+		/*reg =/a/i;
+		console.log(reg.test("abs"));*/
+		//创建一个正则表达式检查一个字符是否含有a或者b
+		 var reg =/a|b/;
+		 console.log(reg.test("abs"));
+		 /*连续用 [a-h] 表示是 a到h有就行 连续的*/
+		 reg =/[A-z]/i;
+		 console.log(reg.test("abs"));
+		 /*以a开头 以b结尾 中间什么都行 写发如下 reg =/ a[*]b 
+			[^ 内容] 表示出了内容以外都可以 
+			[0-9] 表示任意数字 
+		 */
+	</script>
+</head>
+<body>
+
+</body>
+</html>

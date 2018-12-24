@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		
+		#box1 {
+			margin: 0;
+			
+			height: 300px;
+			background-color: red;
+		}
+
+	</style>
+	<script type="text/javascript">
+		window.onload = function(){
+			var box1 = document.getElementById("box1");
+			var btn01 = document.getElementById("btn01");
+			btn01.onclick = function(){
+				//获取当前为元素显示的样式
+				
+				alert(getComputedStyle(box1,null).width);
+			}
+		}
+	</script>
+</head>
+<body>
+		<button id ="btn01">1111</button>
+		<div id ="box1"></div>
+</body>
+</html>

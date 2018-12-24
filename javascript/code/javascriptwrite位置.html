@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script type="text/javascript">
+		/*var num1 = +prompt("请输入第一个数");
+		var num2 = +prompt("请输入第二个数");
+		var num3 = +prompt("请输入第三个数");
+		var min, max ,midden;
+		if (num1<num2 && num1<num3){
+			//num1 最小
+			if (num2<num3){
+				alert("最小的是："+num1+"然后是:"+num2+"最大是："+num3);
+			}
+		}else if (num2<num1 && num2<num3){
+			if(num1<num3){
+				alert("最小的是："+num2+"然后是:"+num1+"最大是："+num3);
+			}
+			//num2 最小
+		}else {
+			//num3 最小
+			if{num1<num2}{
+				alert("最小的是："+num3+"然后是:"+num1+"最大是："+num2);
+			}
+		}*/
+		/*var week = +prompt("请输入今天是星期几");
+		switch(week){
+			case 1 :
+				console.log("今天是星期一");
+				break;
+			case 2 :
+				console.log("今天是星期2");
+				break;
+			case 3 :
+				console.log("今天是星期3");
+				break;
+			case 4 :
+				console.log("今天是星期4");
+				break;
+			case 5 :
+				console.log("今天是星期5");
+				break;
+			case 6 :
+				console.log("今天是星期6");
+				break;
+			case 7 :
+				console.log("今天是星期7");
+				break;
+				default :
+				console.log("非法输入");
+		}*/
+		/*var money = 1000;
+		var year =0;
+		do {
+			money=1.05*money;
+			year++;
+		}while(money<5000);
+		document.write(year);*/
+		/*奇数求和*/
+		/*var sum=0;
+		for(var i=1;i<=100;i=i+2){
+			if(i%2 !=0){
+				sum=sum+i;
+			}
+		}
+		document.write(sum);*/
+		/*水仙花数*/
+		
+		/*定义一个函数 判断一个数字是非时偶数，若果是返回true 不是返回false*/
+		/*function evenNumber(a){
+			return a%2 ==0;
+		}
+		
+		 alert(evenNumber(689));*/
+		 /*定义一个函数，计算圆的面积 ，根据圆的半径*/
+		/* function area(a){
+		 	return a*a*3.141592653;
+		 }
+		 alert(area(9));*/
+		 /*立即执行函数*/
+		/* (function(){
+		 	alert("我只执行一次");
+		 })(); 注意funciton 后面没有空格*/
+		 /*var obj = new Object();
+		 obj.name="管忠旭";
+		 obj.age=18;*/
+		 /*对象的属性值是任何数据类型*/
+		 /*obj.sayName = function(){
+		 		console.log(obj.name);
+		 }
+		 obj.sayName();
+		 console.log(obj.sayName);*/
+		/* var a = "hello";
+		 alert(a.toString());*/
+		 /*var obj ={
+		 	name: "管忠旭",
+		 	age:18,
+		 	sayName:function(){
+		 		console.log(obj.name);
+		 	}
+		 }
+		 obj.sayName();*/
+		 /*枚举对象中的属性*/
+		 /*var obj = {
+		 	name: "管忠旭",
+		 	age: 23,
+		 	gender: "男",
+		 	address: "重庆"
+		 };*/
+		 /*要用到for in 语句
+		 语法 for(var 变量 in 对象){}*/
+		 /*for(var n in obj){
+
+		 	console.log(n);
+		 	console.log(obj[n]);
+		 }*/
+		 /*作用域 Scope*/
+		 /*1 作用域只一个变量的作用范围
+			在JS中之分两种作用域
+			1全局作用域
+				直接编写在script标签中的都是全局作用域
+				全局作用域在我们页面打开时创建在页面关闭时销毁
+				在全局作用域中有一个全局对象 window，我们可以直接使用
+			在全局作用域中
+				创建的变量作为window对象的属性保存
+				创建的函数都是window对象的方法
+			2局部作用域
+
+		 */
+		/* function fun()
+		 {
+		 	var a=123;
+</head>
+		 }
+		 console.log(a);*/
+		 /*var a=100;
+		 console.log(window.a);
+		 function fun(){
+		 	console.log("我是fun函数");
+		 }
+		 window.alert("阿萨德");*/
+		 /*表达式创建对象*/
+		/*var obj = {
+			name:"管忠旭",
+			age:23,
+			gender: "男",
+			sayName: function fun(){
+				console.log(this.name);
+			}
+		};
+		var name="你好";
+		fun();*/
+		/*创建对象*/
+		/*var a ={
+			name : "管忠旭",
+			age :23,
+			sayName:function(){
+				document.write(this.name);
+			}
+		}
+		console.log(a);
+		a.sayName();*/
+		/*练习*/
+		/*var Person={
+			name:"管忠旭",
+			age: 23,
+			sayHello:function(){
+				alert(this.name);
+			}
+		};
+		var arr =[1,2,3,Person.name];
+		console.log(arr);
+*/
+		/*工厂模式创建对象*/
+		//先传建一个函数
+		/*function reactPerson(name, age , gender) {
+			//然后创建一个对象
+			var obj =  new Object();
+			//然后给对象增加新的属性;
+			obj.name=name;
+			obj.age= age;
+			obj.gender= gender;
+			obj.sayName= function(){
+				console.log(this.name);
+			}
+			return obj;
+		};
+		var obj =reactPerson("管忠旭", 23 , "男");
+		obj.sayName();*/
+		/*prrototype 原型*/
+		/*function Person(name, age){
+			this.name=name;
+			this.age = age;
+		}
+		Person.prototype.sayHello=function(){
+			alert("我的名字是"+ this.name);
+		}
+		var per =new Person("管忠旭",23);
+		per.sayHello();
+		var per2 =new Person("猪八戒", 23);
+		per2.sayHello();*/
+		/*function Person(name, age){
+			this.name=name;
+			this.age =age;
+		}
+		Person.prototype.sayName= function(){
+			document.write(this.name);
+		}
+		var per = new Person("管忠旭", 23);
+		per.sayName();*/
+		/*创建数组*/
+		/*
+			第一种方法 构造函数法创建数组
+		var arr = new Array();
+		arr[0] = 33;
+		console.log(arr[0]);*/
+		/*
+		第二种方法 用构造函数的方法创建数组后直接添加新的元素
+		var arr = new Array(1,2,3,5);
+		console.log(arr[0]);*/
+		
+		/*第三种方法 使用字面量创建数组
+		var arr = [1,2,3,5,7];
+		console.log(arr[3]);*/
+		/*var arr = new Array(5,1,undefined);
+		console.log(arr);*/
+		//数组的常用方法 Push()橡树租的末尾添加一个或多个元素 并返回新数组的长度
+		/*var arr = ["孙悟空","沙和尚","猪八戒"];
+		var result =arr.push("唐僧", "白骨精");
+		console.log(arr);
+		console.log(result); 
+		arr.pop();
+		console.log(arr);
+		console.log(result); 
+		arr.unshift("管忠旭");
+		console.log(arr);
+		console.log(result);
+		arr.shift();
+		console.log(arr);
+		console.log(result);*/
+		/*数组遍历*/
+		/*创建一个数组 arr.length index 是索引*/
+		/*var arr=["孙悟空","猪八戒","沙和尚"];
+		for(var i=0; i<arr.length ;i++){
+			console.log(arr[i]);
+		}*/
+		/**/
+		/*function Person(name ,age){
+			this.name=name,
+			this.age =age
+		}*/
+		//修改Person的原型ToString
+		/*Person.prototype.toString=function(){
+			return "Person[name"+this.name+",age="+this.age+"]";
+		}
+		//创建一个person 对象
+		var person =new Person("管忠旭", 23);
+		var person2 =new Person("孙悟空", 18);
+		var person3=new Person("沙和尚", 8);
+		var person4 =new Person("猪八戒", 21);
+		var person5 =new Person("二郎神", 16);*/
+		/*想把这些对象放入到一个数组总*/
+		//var personArr = [person ,person2,person3,person4,person5];
+		/*console.log(personArr);*/
+		//目的 创建一个函数把对象中的大于18岁的人提取出来，然后防撞到一个新的数组中，并返回
+		
+
+		/*function myPerson(arr){
+			var newPerson = [];
+			for(var i=0;i<arr.length;i++){
+				if(arr[i].age>=18){
+					newPerson[newPerson.length]=arr[i];
+				} 
+			}
+			return newPerson;
+		}
+		personArr = myPerson(personArr);
+		console.log(personArr);*/
+
+		/*数组得方法 forEach IE9 以上才支持*/
+		/*var arr = ["白龙马","猪八戒","孙悟空","沙和尚","唐僧"];
+		arr.forEach(function(value, index,ARR){
+			//value 是数组的当前正在遍历的元素
+			//index 是数组的 索引值
+			//ARR 是数组的整个整容
+			console.log("value="+value);
+			console.log("index="+index);
+			console.log("ARR="+ARR);
+		});
+*/
+		/*数组中的方法 slice()该方法不会改变原数组可以用来在数组中提取指定元素 slice的中文意思的切片 所以提取的元素都是连续的包含开始不包括结束
+		 splice() 删出元素并向数组添加新元素 会改变原数组 返回值是原数组元素
+		 两个参数 第一个表示开始的索引 第二个表示删除的个数 第三个表示替换的元素 以后一样
+		 */
+		/*var arr =["白龙马","猪八戒","孙悟空","沙和尚","唐僧"];
+		arr=arr.slice(0,3);
+		console.log(arr);
+		arr=arr.splice(0,2);
+		console.log(arr);*/
+		//练习 删除数组中的重复元素
+		/*var arr= [1,2,3,2,1,3,4,2,2,5];
+		function myShift(arr){
+			for(var i = 0; i<arr.length; i++){
+				for(var j=i+1; j<arr.length; j++){
+					if(arr[i]==arr[j]){
+						arr.splice(j,1);
+						j--;imporant !!!!
+					}
+				}
+			}
+			return arr;
+		}
+		arr = myShift(arr);
+		document.write(arr);*/
+	</script>
+<body>
+<!-- <button onclick="alert('让你点你就点？');">点我一下</button>
+<a href="javascript:alert('点我');">点我</a> -->
+</body>
+</html>

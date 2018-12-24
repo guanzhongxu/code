@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		/*定义一个Person类 类中包含name1 和age 属性 并修改该类原型的toString（）方法 时期输出的形式为Person【name=孙悟空，age=18】 */
+		/*function Person(name,age){
+		this.name=name;
+		this.age=age;
+	}
+		Person.prototype.toString=function(name,age){
+			return console.log("Person[name="+this.name+",age="+this.age);
+	}
+	var per =new Person("管忠旭", 23);
+	console.log(per.toString());
+	var per1 =new Person("孙悟空", 18);
+	var per2 =new Person("猪八戒", 23);
+	var arr= [per, per1, per2];
+	for(var i=0; i<arr.length; i++){
+			console.log(arr[i]);
+	}
+	arr.unshift("唐僧");
+	//console.log(arr);
+	arr.push("白龙马");
+	console.log(arr);
+	arr.pop();
+	console.log(arr);
+	arr.shift();
+	console.log(arr);*/
+
+	//编写一段程序 删除重复的元素 var arr=[1,2,3,4,5,2,2,2,6,7]
+	var arr =[1,2,3,4,5,2,2,2,6,7];
+	for(var i = 0; i<arr.length; i++){
+		for(var j =i+1; j<arr.length; j++){
+			if (arr[i]==arr[j]){
+				arr.splice(j,1);
+				j--;
+			}
+		}
+	}
+	console.log(arr);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

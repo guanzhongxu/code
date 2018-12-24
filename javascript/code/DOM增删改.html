@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		table {
+			border: 1px solid #000;
+			padding: 0;
+		}
+		
+	</style>
+	<script type="text/javascript">
+		window.onclick = function(){
+			var allA =document.getElementsByTagName("a");
+
+			//为每个超链接绑定单机酸丁函数
+			for(i=0;i<allA.length;i++){
+				allA[i].onclick = function(){
+					//点击超链接删除
+					var tr = this.parentNode.parentNode;
+					//var name=tr.getElementsByTagName("td")[0].innerHTML;
+					var name=tr.children[0].innerHTML;
+					var flag = confirm("请问是否删除"+name+"吗");
+					if(flag){
+						tr.parentNode.removeChild(tr);
+					}
+					
+				}
+				
+			}
+			/*添加员工信息的功能*/
+			//点击submit摁钮以后把员工的信息添加到表格之中
+			//为提交单击绑定单击响应函数
+			var submit =document.getElementById("submit");
+			submit.onclick =function(){
+				//获取员工的信息
+				var name = document.getElementById("name").value;
+				var email =document.getElementById("email").value;
+				var Salary = document.getElementById("Salary").value;
+
+				//创建tr
+				var tr =document.createElement("tr");
+
+				//创建4个td
+
+				var nameTd =document.createElement("td");
+				var emailTd =document.createElement("td");
+				var SalaryTd =document.createElement("td");
+				var aTd =document.createElement("td");
+
+				//创建一个创链接
+
+				var a =document.createElement("a");
+
+				//在a里面佳田herf属性
+				a.href="javascript:;";
+
+				//创建文本
+				var nameText = document.createTextNode(name);
+				var emailText =document.createTextNode(email);
+				var SalaryText =document.createTextNode(Salary);
+				var del =document.createTextNode("delete");
+
+				//将文本添加到td中
+				nameTd.appendChild(nameText);
+				emailTd.appendChild(emailText);
+				SalaryTd.appendChild(SalaryText);
+
+				//想A中添加文本
+
+				a.appendChild(del);
+				aTd.appendChild(a);
+
+				//将td添加到tr中
+				tr.appendChild(nameTd);
+				tr.appendChild(emailTd);
+				tr.appendChild(SalaryTd);
+				tr.appendChild(aTd);
+
+				//获取table
+				var table =document.getElementById("table");
+				//获取tbody 
+				var tbody=table.getElementsByTagName("tbody")[0];
+				//把tr添加到table中
+
+				tbody.appendChild(tr);
+			}
+		}
+	</script>
+</head>
+<body>
+<table id="table">
+	<tr>
+		<td >姓名</td>
+		<td >工资</td>
+		<td >邮箱</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td >tom</td>
+		<td >工资</td>
+		<td >邮箱</td>
+		<td><a href="javascript:;" id="delete">删除</a></td>
+	</tr>
+	<tr>
+		<td >marry</td>
+		<td >工资</td>
+		<td >邮箱</td>
+		<td><a href="javascript:;" id="delete">删除</a></td>
+	</tr>
+	<tr>
+		<td >tony</td>
+		<td >工资</td>
+		<td >邮箱</td>
+		<td><a href="javascript:;" id="delete">删除</a></td>
+	</tr>
+</table>
+<table>
+	<tr>
+		<td>
+		姓名：<input type="text" id="name"	name="">
+		</td>
+	</tr>
+	<tr>
+		<td>
+		邮箱：<input type="text" id="email"	name="">
+		</td>
+	</tr>
+	<tr>
+		<td>
+		工资：<input type="text" id="Salary"	name="">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<button id ="submit">提交</button>	
+		</td>
+	</tr>
+</table>
+
+</body>
+</html>
