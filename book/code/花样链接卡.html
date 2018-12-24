@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.father {
+			width: 308px;
+			height: 308px;
+			margin: 0 auto;
+			position: relative;
+			padding: 0;
+		}
+		.son {
+			margin: 0;
+			width: 100px;
+			height: 100px;
+			border: 1px solid red;
+			position: absolute;
+			background-color: pink;
+		}
+		.son:first-child:hover {
+			background: blue;
+		}
+		.son:nth-child(2) {
+			transform: translateX(100%);
+		}
+		.son:nth-child(2):hover {
+			background: blue;
+		}
+		.son:nth-child(3) {
+			transform: translateX(200%)
+		}
+		.son:nth-child(3):hover {
+			background: blue;
+		}
+		.son:nth-child(4) {
+			transform: translate(0,100%);
+		}
+		.son:nth-child(4):hover {
+			background: blue;
+		}
+		.son:nth-child(5) {
+			transform: translate(100%,100%);
+		}
+		.son:nth-child(5):hover {
+			background: blue;
+		}
+		.son:nth-child(6) {
+			transform: translate(200%,100%);
+		}
+		.son:nth-child(6):hover {
+			background: blue;
+		}
+		.son:nth-child(7) {
+			transform: translate(0,200%);
+		}
+		.son:nth-child(7):hover {
+			background: blue;
+		}
+		.son:nth-child(8) {
+			transform: translate(100%,200%);
+		}
+		.son:nth-child(8):hover {
+			background: blue;
+		}
+		.son:nth-child(9) {
+			transform: translate(200%,200%);
+		}
+		.son:nth-child(9):hover {
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+<div class="father">
+	<div class="son"><a href="#"></a></div>
+	<div class="son"><a href="#"></a></div>
+	<div class="son"><a href="#"></a></div>
+	<div class="son"><a href="#"></a></div>
+	<div class="son"><a href="#"></a></div>
+	<div class="son"><a href="#"></a></div>
+	<div class="son"><a href="#"></a></div>
+	<div class="son"><a href="#"></a></div>
+	<div class="son"><a href="#"></a></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		ul {
+			list-style: none;
+		}
+		ul li img {
+			width: 60px;
+			height: 60px;
+			transition: all 2s linear 0s ;
+		}
+		ul:after {
+			content: ".";
+			display: block;
+			height: 0;
+			visibility: hidden;
+			clear: both;
+		}
+		ul li {
+			float: left;
+		}
+		ul li:nth-child(1):hover img {
+			transform: rotateZ(330deg);
+		}
+		ul li:nth-child(2):hover img {
+			transform: rotateZ(330deg);
+		}
+		ul li:nth-child(3):hover img {
+			transform: rotateZ(330deg);
+		}
+		ul li:nth-child(4):hover img {
+			transform: rotateZ(330deg);
+		}
+	</style>
+</head>
+<body>
+<h1>顺时针旋转360度冰球额放大1.2倍</h1>
+<ul>
+	<li><a href="#"><img src="../images/小人.jpg"></a></li>
+	<li><a href="#"><img src="../images/真是令人害怕.jpg"></a></li>		
+	<li><a href="#"><img src="../images/说的我都脸红了.jpg"></a></li>	
+	<li><a href="#"><img src="../images/走路嚣张丝毫不慌.jpg"></a></li>	
+</ul>
+</body>
+</html>

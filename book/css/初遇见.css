@@ -1,0 +1,40 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+.overall {
+	width: 400px;
+	background: linear-gradient(to top, #caeffe, #ffffed);
+	background: -webkit-gradient(to top, #caeffe, #ffffed);
+}
+/*整体大盒子结束*/
+h1 {
+	text-shadow: 3px 3px 3px #000;
+	text-align: center;
+	font-size: 18px;
+}
+h2 {
+	text-shadow: 2px 2px 3px #000;
+	text-align: right;
+	font-size: 16px;
+}
+/*正文*/
+p {
+	text-indent: 2em;
+	line-height: 22px;
+	font-size: 12px;
+}
+.one {
+	font-size: 18px;
+	font-weight: 700;
+	text-shadow: 0.5px 0.5px 0.5px #000,
+					-1px -1px 1px #fff ;
+}
+.tow {
+	font-style: italic;
+	color: blue;
+	font-size: 16px;
+}
+.three {
+	text-decoration: underline;
+}

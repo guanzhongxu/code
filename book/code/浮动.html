@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.box1 {
+			width: 300px;
+			/*overflow: hidden;第三种清除浮动的方法都在父亲上*/
+			background-color: pink;
+		}
+		/*.clearfix:after {
+			content: ".";
+			display:block;
+			height: 0;
+			visibility: hidden;
+			clear: both;
+			第一种清楚浮动的方法 在父亲上
+		}*/
+		/*.clearfix:before ,
+		.clearfix:after {
+			content: "";
+			display: table;
+		}
+		.clearfix:after {
+			clear: both;
+		}
+		.clear {
+			*zoom: 1;
+		}*/
+		.clear {
+			content:".";
+			clear:both;
+			visibility: hidden;
+		}
+		.one {
+			width: 200px;
+			height: 100px;
+			background: #3c3c3c;
+			float: left;
+		}
+		.tow {
+			width:100px;
+			height:200px;
+			background-color: #777;
+			float: left;
+		}
+		.box2 {
+			width: 350px;
+			height: 250px;
+			background-color: orange;
+		}
+	</style>
+</head>
+<body>
+<div class="box1 clearfix">
+	<div class="one"></div>
+	<div class="tow"></div>
+	<div class="clear"></div>
+</div>
+<div class="box2"></div>
+</body>
+</html>

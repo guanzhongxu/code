@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		header {
+			height: 50px;
+			background: pink url("../images/QQvip.png")  no-repeat;
+			background-size: 100px;
+			position: relative;
+
+		}
+		ul {
+			list-style: none;
+		}
+		header ul li {
+			float: right;
+			margin-left: 10px;
+			text-align: center;
+			line-height: 50px;
+		}
+		header ul {
+			margin-right: 50px;
+		}
+		a {
+			text-decoration: none;
+		}
+		ul li a:hover {
+			color: orange;
+		}
+		#main {
+			width: 250px;
+			position: absolute;
+			right: 50px;
+			background-color: rgba(0, 0, 0, 0.3);
+			box-shadow: 2px 2px 2px rgba(0, 0, 0,0.3),
+						-2px -2px 2px rgba(0, 0, 0,0.3),
+						2px -2px 2px rgba(0, 0, 0,0.3),
+						-2px 2px 2px rgba(0, 0, 0,0.3);
+			display: none;
+		}
+		header li:hover #main {
+			display: block;
+		}
+		.section {
+			width: 80%;
+			margin: 0 auto;
+			border-bottom: 1px solid #3c3c3c;
+			overflow: hidden;
+		}
+		#main .section:last-child {
+			border-bottom:0;
+		}
+		#main .section li {
+			float: left;
+			margin-right:8px;
+		}
+
+	</style>
+</head>
+<body>
+<header>
+	<ul>
+		<li><a href="#">网站导航</a></li>
+		<li><a href="#">手机报</a></li>
+		<li><a href="#">各地购课</a></li>
+		<li><a href="#">快速注卡</a></li>
+		<li><a href="#">优惠券</a></li>
+		<li><a href="#">购物车</a></li>
+	</ul>	
+</header>
+<div id="main">
+	<div class="section">
+		<ul>
+				<li><a href="#">托福</a></li>
+				<li><a href="#">雅思</a></li>
+				<li><a href="#">考研</a></li>
+				<li><a href="#">职称英语</a></li>
+				<li><a href="#">初中</a></li>
+				<li><a href="#">日语</a></li>
+		</ul>
+	</div>
+	<div class="section">
+		<ul>
+				<li><a href="#">网络课堂</a></li>
+				<li><a href="#">资讯中心</a></li>
+				<li><a href="#">知识堂</a></li>
+				<li><a href="#">大师讲坛</a></li>
+				<li><a href="#">学习讲坛</a></li>
+				<li><a href="#">学词</a></li>
+				<li><a href="#">考研搜校</a></li>
+		</ul>
+	</div>
+	<div class="section">
+		<ul>
+				<li><a href="#">M-zone</a></li>
+				<li><a href="#">手机报</a></li>
+				<li><a href="#">时时英语</a></li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>

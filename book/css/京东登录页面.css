@@ -1,0 +1,11 @@
+nav {
+	height: 172px;
+	width:100%;
+	background-color: pink;
+}
+nav .logo {
+	height: 172px;
+	width:191px;
+	background-color: pink;
+	
+}
