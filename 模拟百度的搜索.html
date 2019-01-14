@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模拟百度搜索</title>
+    <style>
+        #box{
+            width: 400px;
+            margin: 150px auto;
+        }
+        #ip{
+            width: 87%;
+        }
+    </style>
+    <script src="../js/mr.guan.js"></script>
+    <script>
+        window.onload =function(){
+            var arr = ["管忠旭","管民","管二狗","英雄","英雄联盟"];
+            var box = $MyId("box");
+            var ip  = $MyId("ip");
+            bindEvent(ip,"keyup",function(){
+               var tempArr = [];
+               //把符合内容的放进临时数组
+                if($MyId("dv")){
+                    box.removeChild($MyId("dv"));
+                }
+               for(var i =0 ; i<arr.length ;i++){
+                   //证明是以输入内容开头的
+                   if(arr[i].indexOf(ip.value)==0){
+                       tempArr.push(arr[i]);
+                   }
+               }
+                if(tempArr.length == 0 || ip.value==0){
+                    if($MyId("dv")){
+                        box.removeChild($MyId("dv"));
+                    }
+                    return false;
+                }
+               var div = document.createElement("div");
+               div.id= "dv";
+               div.style.width = "100%";
+               div.style.border = "1px solid #ccc";
+               box.appendChild(div);
+                for(var i =0 ; i<tempArr.length;i++){
+                    var p = document.createElement("p");
+                    p.innerText = tempArr[i];
+                    p.style.color = "#ccc";
+                    p.style.fontSize = "14px";
+                    p.style.margin= "3px";
+                    div.appendChild(p);
+                    p.onmouseover= function(){
+                        this.style.backgroundColor = "yellow";
+                    };
+                    p.onmouseout = function(){
+                        this.style.backgroundColor = "";
+                    };
+                }
+            });
+        }
+
+    </script>
+</head>
+<body>
+<div id="box">
+    <input type="text" id="ip">
+    <input type="button" value="搜索">
+</div>
+</body>
+</html>
