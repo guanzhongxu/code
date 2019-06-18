@@ -1,0 +1,10 @@
+ proxyTable: {
+      '/api': {
+        target: 'https://www.juhe.cn', //请求的默认露镜头
+        changeOrigin: true, //允许跨域
+        pathRewrite: {
+          '^/api': '' // 别名
+        }
+      },
+      secure:false
+    },
